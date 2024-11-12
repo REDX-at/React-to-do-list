@@ -1,4 +1,4 @@
-import style from "./Todoitems.css";
+import styles from "./Todoitems.module.css";
 
 export default function Todoitems({ item, todos, settodos }) {
   function handleDelete(item) {
@@ -7,18 +7,26 @@ export default function Todoitems({ item, todos, settodos }) {
   }
 
   function chnageStyle(name) {
-    console.log(name);
-    item.done = !item.done;
-    console.log(item.done);
+    const newTodos = todos.map((todo) => {
+      if (todo.name === name) {
+        return { ...todo, done: !todo.done };
+      }
+      return todo;
+    });
+    settodos(newTodos);
   }
+
+  const done = item.done ? styles.change : "";
   return (
     <>
-      <h1 onClick={() => chnageStyle(item.name)} className="item" className="classCompleted">
-        {item.name}
-      </h1>
-      <button onClick={() => handleDelete(item)} className="delet">
-        Delete
-      </button>
+      <div className={styles.flexitem}>
+        <h1 onClick={() => chnageStyle(item.name)} className={done}>
+          {item.name}
+        </h1>
+        <button onClick={() => handleDelete(item)} className={styles.delet}>
+          Delete
+        </button>
+      </div>
     </>
   );
 }

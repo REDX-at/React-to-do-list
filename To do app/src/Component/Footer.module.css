@@ -1,0 +1,21 @@
+.footer {
+  font-size: 2.3em;
+  display: flex;
+  background-color: #f7ca18;
+  border-radius: 8px;
+  justify-content: center;
+  height: 100px;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  padding: 0px 40px;
+}
+
+.footerDiv {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}

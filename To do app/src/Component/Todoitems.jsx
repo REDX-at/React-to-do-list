@@ -13,7 +13,7 @@ export default function Todoitems({ item, todos, settodos }) {
   }
   return (
     <>
-      <h1 onClick={() => chnageStyle(item.name)} className="item">
+      <h1 onClick={() => chnageStyle(item.name)} className="item" className="classCompleted">
         {item.name}
       </h1>
       <button onClick={() => handleDelete(item)} className="delet">
